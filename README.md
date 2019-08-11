@@ -469,8 +469,8 @@ Select distinct top 20 e.last_name,l.countoflastname
 [Query 71](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
-## Query 8.b
 ```
+## Query 8.b
 SELECT  TOP 20 e.last_name, COUNT(*)  as countofnames
 from employees as e
 Group by e.last_name
