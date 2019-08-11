@@ -457,6 +457,8 @@ Select distinct top 20 e.last_name,l.countoflastname
 | Gelosh    | 223             |
 | Farris    | 222             |
 | Sudbeck   | 222             |
+
+```
 #### Click on Link to go to section
 [SQL Homework, Week7](#SQL-Homework,-Week7)
 [Database Schema](#Database-Schema)
@@ -469,7 +471,6 @@ Select distinct top 20 e.last_name,l.countoflastname
 [Query 71](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
-```
 ## Query 8.b
 SELECT  TOP 20 e.last_name, COUNT(*)  as countofnames
 from employees as e
@@ -503,6 +504,7 @@ I have included this to show how much different queries that do the same thing c
 | Anandan        | 190          |
 | Ananiadou      | 160          |
 | Andreotta      | 165          |
+
 #### Click on Link to go to section
 [SQL Homework, Week7](#SQL-Homework,-Week7)
 [Database Schema](#Database-Schema)
@@ -515,3 +517,4 @@ I have included this to show how much different queries that do the same thing c
 [Query 71](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
+
