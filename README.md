@@ -1,15 +1,15 @@
 #### Click on Link to go to section
-[SQL Homework, Week7](#SQL-Homework,-Week7)
-[Database Schema](Database-Schema)
-[Query 1](Query-1)
-[Query 2](Query-2)
-[Query 3](Query-3)
-[Query 4](Query-4)
-[Query 51](Query-5)
-[Query 6](Query-6)
-[Query 71](Query-7)
-[Query 8](Query-8)
-[Query 8b](Query-8b)
+[SQL Homework, Week7](#SQL Homework, Week7)
+[Database Schema](Database Schema)
+[Query 1](Query 1)
+[Query 2](Query 2)
+[Query 3](Query 3)
+[Query 4](Query 4)
+[Query 5](Query 5)
+[Query 6](Query 6)
+[Query 71](Query 7)
+[Query 8](Query 8)
+[Query 8b](Query 8b)
 
 # SQL Homework, Week7
 
