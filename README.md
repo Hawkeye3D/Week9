@@ -1,5 +1,5 @@
 #### Click on Link to go to section
-[SQL Homework, Week7](#SQL Homework, Week7)
+[SQL Homework, Week7](#SQL-Homework,-Week7)
 [Database Schema](#Database-Schema)
 [Query 1](#Query-1)
 [Query 2](#Query-2)
@@ -158,12 +158,35 @@ GO
 ALTER TABLE [dbo].[titles] CHECK CONSTRAINT [FK_titles_Employees]
 GO
 ```
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 ## Diagram
 
 Probably the trickiest part of this is to recognize that the primary keys for dept_manager,dept_emp and titles need to include the from_date column.  This is because employees are moved around over the course of their careers in the company.  A manager, for example, may be moved  to another department for a time, and then transferred back later.
 
 #![Diagram](Diagram.png)
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 ## Query 1
 ```mssql
 select TOP 5 e.emp_no, e.gender,e.last_name, e.first_name, s.salary
@@ -184,7 +207,18 @@ order by s.salary desc
 | 44188  | M      | Peac        | Slavian    | 127238 |
 | 444756 | M      | Varker      | Nahid      | 127041 |
 | 458302 | M      | Esposito    | Poorav     | 126703 |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 
 
 ## Query 2
@@ -206,7 +240,18 @@ order by e.last_name, e.first_name desc
 | 251782 | F      | Aamodt    | Somnath    |
 | 295537 | M      | Aamodt    | Shmuel     |
 | 260324 | M      | Aamodt    | Salvador   |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 ## Query 3
 ```
 USE [Rice_Class_Csv]
@@ -238,7 +283,18 @@ order by d.dept_no
 | d007    | Sales              | 1991-03-07 | 9999-01-01 | 71148  | Zhang      | Hauke      | 1986-12-30 |
 | d008    | Research           | 1991-04-08 | 9999-01-01 | 48077  | Kambil     | Hilary     | 1988-01-31 |
 | d009    | Customer Service   | 1996-01-03 | 9999-01-01 | 40000  | Weedman    | Yuchang    | 1989-07-10 |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 ## Query 4
 ```
 SELECT TOP 10 de.emp_no, de.dept_no,d.dept_name,e.last_name,e.first_name
@@ -267,7 +323,18 @@ order by de.emp_no desc
 | 499991 | d009    | Customer Service | Sichman      | Pohua      |
 | 499990 | d005    | Development      | Kohling      | Khaled     |
 | 499987 | d007    | Sales            | Dusink       | Rimli      |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 ## Query 5
 ```
 Select TOP 20 e.first_name, e.last_name, e.emp_no from
@@ -288,7 +355,18 @@ order by e.last_name asc
 | Hercules   | Bahr      | 435221 |
 | Hercules   | Bail      | 213553 |
 | Hercules   | Bain      | 294352 |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 
 
 ## Query 6
@@ -314,7 +392,18 @@ where d.dept_name='Sales' and year(de.to_date)=9999
 | 10041  | Lenart      | Uri        | Sales     |
 | 10050  | Dredge      | Yinghua    | Sales     |
 | 10053  | Zschoche    | Sanjiv     | Sales     |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 ## Query 7
 ```
 select TOP 20 de.emp_no,e.last_name,e.first_name,d.dept_name
@@ -338,7 +427,18 @@ order by e.last_name asc
 | 61477  | Aamodt    | Jenwei     | Development |
 | 36577  | Aamodt    | Mahmut     | Development |
 | 276101 | Aamodt    | Deborah    | Development |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 ## Query 8
 ```mssql
 Select distinct top 20 e.last_name,l.countoflastname
@@ -357,7 +457,18 @@ Select distinct top 20 e.last_name,l.countoflastname
 | Gelosh    | 223             |
 | Farris    | 222             |
 | Sudbeck   | 222             |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
 ## Query 8.b
 ```
 SELECT  TOP 20 e.last_name, COUNT(*)  as countofnames
@@ -392,4 +503,15 @@ I have included this to show how much different queries that do the same thing c
 | Anandan        | 190          |
 | Ananiadou      | 160          |
 | Andreotta      | 165          |
-
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 71](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
