@@ -329,11 +329,13 @@ order by e.last_name asc
 | 276101 | Aamodt    | Deborah    | Development |
 
 ## Query 8
+```mssql
 Select distinct top 20 e.last_name,l.countoflastname
 	from Employees as e
 		inner join(select last_name,count(last_name) as countoflastname
 			from employees group by last_name) as l on e.last_name = l.last_name
 			order by countoflastname desc
+			```
 
 #### Q8 Output
 
