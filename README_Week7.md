@@ -7,9 +7,8 @@ This assignment was supposed to be done with Postgres, but I could not get Postg
 One comment I would like you to pass on to Trilogy is to get away from Postgres.  It seems to work reliably on Macs, but for PC's and the eco-systems they live in, it is problematic.  Personally, I think using MS SQL Express and MS SQL Server Manager is likely to be a much more stable solution.  They are both free.
 
 ## Database Schema
-
-```
-​```mssql
+ 
+```mssql
 
 USE [Rice_Class_Csv]
 GO
@@ -148,28 +147,11 @@ GO
 ALTER TABLE [dbo].[titles] CHECK CONSTRAINT [FK_titles_Employees]
 GO
 ```
-
-```mssql		
-
-```
-
-```
-
-```
-
-```
-
-```
-
 ## Diagram
 
 Probably the trickiest part of this is to recognize that the primary keys for dept_manager,dept_emp and titles need to include the from_date column.  This is because employees are moved around over the course of their careers in the company.  A manager, for example, may be moved  to another department for a time, and then transferred back later.
 
-#![Diagram](C:\Users\kevin\Desktop\Diagram.png)
-
-
-
-
+#![Diagram](Diagram.png)
 
 ## Query 1
 ```mssql
@@ -371,8 +353,6 @@ Group by e.last_name
 order by e.last_name
 ```
 
-
-
 #### Q8b Output
 
 I have included this to show how much different queries that do the same thing can be.  This query is far faster than the previous query, and far more simple in it's construction.
@@ -399,10 +379,4 @@ I have included this to show how much different queries that do the same thing c
 | Anandan        | 190          |
 | Ananiadou      | 160          |
 | Andreotta      | 165          |
-
-
-
-
-
-
 
