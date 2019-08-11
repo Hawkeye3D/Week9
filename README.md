@@ -1,8 +1,8 @@
 #### Click on Link to go to section
 [SQL Homework, Week7](#SQL Homework, Week7)
 [Database Schema](#Database Schema)
-[Query 1](#Query 1)
-[Query 2](#Query 2)
+[Query 1](####Query 1)
+[Query 2](####Query 2)
 [Query 3](#Query 3)
 [Query 4](#Query 4)
 [Query 5](#Query 5)
