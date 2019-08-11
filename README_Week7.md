@@ -1,19 +1,19 @@
 [TOC]
 
-
-
 # SQL Homework, Week7
 
 This assignment was supposed to be done with Postgres, but I could not get Postgres to remain stable on either my work computer or my school computer.  One has WIndows 10 Pro, the other WIndows 10 Home.  Both use Malwarebytes and Windows Defender, so maybe one of those is the problem.  In the end I used MSSQL  Server Manager to assist in the design of this database.  To the extent of using the GUI interface to create the tables instead of typing them my hand, one could say I cheated a bit.  However, in practice I NEVER type them by hand;  too prone to errors and lost time chasing those errors.    
 
 One comment I would like you to pass on to Trilogy is to get away from Postgres.  It seems to work reliably on Macs, but for PC's and the eco-systems they live in, it is problematic.  Personally, I think using MS SQL Express and MS SQL Server Manager is likely to be a much more stable solution.  They are both free.
 
-
-
 ## Database Schema
+
+```
+​```mssql
 
 USE [Rice_Class_Csv]
 GO
+
 /****** Object:  Table [dbo].[departments]    Script Date: 08/10/19 7:44:34 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -147,8 +147,19 @@ REFERENCES [dbo].[Employees] ([emp_no])
 GO
 ALTER TABLE [dbo].[titles] CHECK CONSTRAINT [FK_titles_Employees]
 GO
+```
 
+```mssql		
 
+```
+
+```
+
+```
+
+```
+
+```
 
 ## Diagram
 
@@ -156,155 +167,20 @@ Probably the trickiest part of this is to recognize that the primary keys for de
 
 #![Diagram](C:\Users\kevin\Desktop\Diagram.png)
 
-## About the Queries
 
-Most of the queries here will list the TOP x of whatever they query.  TOP is the MSSQL dialect.  For Postgres, LIMIT would be used.  
-
-## Database Schema
-USE [Rice_Class_Csv]
-GO
-/****** Object:  Table [dbo].[departments]    Script Date: 08/10/19 7:44:34 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[departments](
-	[dept_no] [nvarchar](50) NOT NULL,
-	[dept_name] [nvarchar](50) NOT NULL,
- CONSTRAINT [PK_departments] PRIMARY KEY CLUSTERED 
-(
-	[dept_no] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[dept_emp]    Script Date: 08/10/19 7:44:34 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[dept_emp](
-	[emp_no] [int] NOT NULL,
-	[dept_no] [nvarchar](50) NOT NULL,
-	[from_date] [date] NOT NULL,
-	[to_date] [date] NOT NULL,
- CONSTRAINT [PK_dept_emp] PRIMARY KEY CLUSTERED 
-(
-	[emp_no] ASC,
-	[dept_no] ASC,
-	[from_date] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[dept_manager]    Script Date: 08/10/19 7:44:34 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[dept_manager](
-	[dept_no] [nvarchar](50) NOT NULL,
-	[emp_no] [int] NOT NULL,
-	[from_date] [date] NOT NULL,
-	[to_date] [date] NOT NULL,
- CONSTRAINT [PK_dept_manager] PRIMARY KEY CLUSTERED 
-(
-	[dept_no] ASC,
-	[emp_no] ASC,
-	[from_date] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Employees]    Script Date: 08/10/19 7:44:34 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Employees](
-	[emp_no] [int] NOT NULL,
-	[birth_date] [date] NOT NULL,
-	[first_name] [nvarchar](50) NOT NULL,
-	[last_name] [nvarchar](50) NOT NULL,
-	[gender] [nvarchar](50) NOT NULL,
-	[hire_date] [date] NOT NULL,
- CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED 
-(
-	[emp_no] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[salaries]    Script Date: 08/10/19 7:44:34 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[salaries](
-	[emp_no] [int] NOT NULL,
-	[salary] [int] NOT NULL,
-	[from_date] [date] NOT NULL,
-	[to_date] [date] NOT NULL,
- CONSTRAINT [PK_salaries] PRIMARY KEY CLUSTERED 
-(
-	[emp_no] ASC,
-	[from_date] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[titles]    Script Date: 08/10/19 7:44:34 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[titles](
-	[emp_no] [int] NOT NULL,
-	[title] [nvarchar](50) NOT NULL,
-	[from_date] [date] NOT NULL,
-	[to_date] [date] NOT NULL,
- CONSTRAINT [PK_titles] PRIMARY KEY CLUSTERED 
-(
-	[emp_no] ASC,
-	[title] ASC,
-	[from_date] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [dbo].[dept_emp]  WITH CHECK ADD  CONSTRAINT [FK_dept_emp_departments] FOREIGN KEY([dept_no])
-REFERENCES [dbo].[departments] ([dept_no])
-GO
-ALTER TABLE [dbo].[dept_emp] CHECK CONSTRAINT [FK_dept_emp_departments]
-GO
-ALTER TABLE [dbo].[dept_emp]  WITH CHECK ADD  CONSTRAINT [FK_dept_emp_Employees] FOREIGN KEY([emp_no])
-REFERENCES [dbo].[Employees] ([emp_no])
-GO
-ALTER TABLE [dbo].[dept_emp] CHECK CONSTRAINT [FK_dept_emp_Employees]
-GO
-ALTER TABLE [dbo].[dept_manager]  WITH CHECK ADD  CONSTRAINT [FK_dept_manager_departments] FOREIGN KEY([dept_no])
-REFERENCES [dbo].[departments] ([dept_no])
-GO
-ALTER TABLE [dbo].[dept_manager] CHECK CONSTRAINT [FK_dept_manager_departments]
-GO
-ALTER TABLE [dbo].[dept_manager]  WITH CHECK ADD  CONSTRAINT [FK_dept_manager_Employees] FOREIGN KEY([emp_no])
-REFERENCES [dbo].[Employees] ([emp_no])
-GO
-ALTER TABLE [dbo].[dept_manager] CHECK CONSTRAINT [FK_dept_manager_Employees]
-GO
-ALTER TABLE [dbo].[salaries]  WITH CHECK ADD  CONSTRAINT [FK_salaries_Employees] FOREIGN KEY([emp_no])
-REFERENCES [dbo].[Employees] ([emp_no])
-GO
-ALTER TABLE [dbo].[salaries] CHECK CONSTRAINT [FK_salaries_Employees]
-GO
-ALTER TABLE [dbo].[titles]  WITH CHECK ADD  CONSTRAINT [FK_titles_Employees] FOREIGN KEY([emp_no])
-REFERENCES [dbo].[Employees] ([emp_no])
-GO
-ALTER TABLE [dbo].[titles] CHECK CONSTRAINT [FK_titles_Employees]
-GO
 
 
 
 ## Query 1
+```mssql
 select TOP 5 e.emp_no, e.gender,e.last_name, e.first_name, s.salary
 from employees as e 
 INNER JOIN Salaries as s
 on e.emp_no = s.emp_no
 order by s.salary desc
+```
+
+
 
 #### Q1 Output
 
@@ -319,10 +195,14 @@ order by s.salary desc
 
 
 ## Query 2
+```
 select TOP 5 e.emp_no, e.gender,e.last_name, e.first_name
 from employees as e
 Where Year(e.hire_date )= 1986
 order by e.last_name, e.first_name desc
+```
+
+
 
 #### Q2 Output
 
@@ -335,6 +215,7 @@ order by e.last_name, e.first_name desc
 | 260324 | M      | Aamodt    | Salvador   |
 
 ## Query 3
+```
 USE [Rice_Class_Csv]
 GO
 select d.dept_no,dp.dept_name,d.from_date,d.to_date,s.salary,e.last_name,e.first_name,e.hire_date
@@ -347,6 +228,9 @@ inner join
 departments as dp on dp.dept_no=d.dept_no
 Where Year(d.to_date )= 9999
 order by d.dept_no
+```
+
+
 
 #### Q3 Output
 
@@ -363,6 +247,7 @@ order by d.dept_no
 | d009    | Customer Service   | 1996-01-03 | 9999-01-01 | 40000  | Weedman    | Yuchang    | 1989-07-10 |
 
 ## Query 4
+```
 SELECT TOP 10 de.emp_no, de.dept_no,d.dept_name,e.last_name,e.first_name
 From dept_emp as de
 inner join 
@@ -371,6 +256,9 @@ inner join
 departments as d on de.dept_no= d.dept_no
 where year(de.to_date)= 9999
 order by de.emp_no desc
+```
+
+
 
 #### Q4 Output
 
@@ -388,11 +276,15 @@ order by de.emp_no desc
 | 499987 | d007    | Sales            | Dusink       | Rimli      |
 
 ## Query 5
+```
 Select TOP 20 e.first_name, e.last_name, e.emp_no from
 employees as e
 where e.first_name='Hercules'
 and e.last_name like 'B%'
 order by e.last_name asc
+```
+
+
 
 #### Q5 Output
 
@@ -408,6 +300,7 @@ order by e.last_name asc
 
 ## Query 6
 
+```
 select TOP 20 de.emp_no,e.last_name,e.first_name,d.dept_name
 from dept_emp as de
 inner join
@@ -415,6 +308,9 @@ departments as d on d.dept_no=de.dept_no
 inner join
 employees as e on de.emp_no = e.emp_no
 where d.dept_name='Sales' and year(de.to_date)=9999
+```
+
+
 
 #### Q6 Output
 
@@ -427,6 +323,7 @@ where d.dept_name='Sales' and year(de.to_date)=9999
 | 10053  | Zschoche    | Sanjiv     | Sales     |
 
 ## Query 7
+```
 select TOP 20 de.emp_no,e.last_name,e.first_name,d.dept_name
 from dept_emp as de
 inner join
@@ -435,6 +332,9 @@ inner join
 employees as e on de.emp_no = e.emp_no
 where (d.dept_name='Sales' or d.dept_name='Development') and year(de.to_date)=9999
 order by e.last_name asc
+```
+
+
 
 #### Q7 
 
@@ -464,10 +364,14 @@ Select distinct top 20 e.last_name,l.countoflastname
 | Sudbeck   | 222             |
 
 ## Query 8.b
+```
 SELECT  TOP 20 e.last_name, COUNT(*)  as countofnames
 from employees as e
 Group by e.last_name
 order by e.last_name
+```
+
+
 
 #### Q8b Output
 
