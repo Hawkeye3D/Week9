@@ -1,3 +1,16 @@
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](Database-Schema)
+[Query 1](Query-1)
+[Query 2](Query-2)
+[Query 3](Query-3)
+[Query 4](Query-4)
+[Query 51](Query-5)
+[Query 6](Query-6)
+[Query 71](Query-7)
+[Query 8](Query-8)
+[Query 8b](Query-8b)
+
 # SQL Homework, Week7
 
 This assignment was supposed to be done with Postgres, but I could not get Postgres to remain stable on either my work computer or my school computer.  One has WIndows 10 Pro, the other WIndows 10 Home.  Both use Malwarebytes and Windows Defender, so maybe one of those is the problem.  In the end I used MSSQL  Server Manager to assist in the design of this database.  To the extent of using the GUI interface to create the tables instead of typing them my hand, one could say I cheated a bit.  However, in practice I NEVER type them by hand;  too prone to errors and lost time chasing those errors.    
