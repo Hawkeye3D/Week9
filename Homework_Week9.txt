@@ -1,0 +1,213 @@
+
+## Database Schema
+USE [Rice_Class_Csv]
+GO
+/****** Object:  Table [dbo].[departments]    Script Date: 08/10/19 7:44:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[departments](
+	[dept_no] [nvarchar](50) NOT NULL,
+	[dept_name] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_departments] PRIMARY KEY CLUSTERED 
+(
+	[dept_no] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dept_emp]    Script Date: 08/10/19 7:44:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dept_emp](
+	[emp_no] [int] NOT NULL,
+	[dept_no] [nvarchar](50) NOT NULL,
+	[from_date] [date] NOT NULL,
+	[to_date] [date] NOT NULL,
+ CONSTRAINT [PK_dept_emp] PRIMARY KEY CLUSTERED 
+(
+	[emp_no] ASC,
+	[dept_no] ASC,
+	[from_date] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[dept_manager]    Script Date: 08/10/19 7:44:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[dept_manager](
+	[dept_no] [nvarchar](50) NOT NULL,
+	[emp_no] [int] NOT NULL,
+	[from_date] [date] NOT NULL,
+	[to_date] [date] NOT NULL,
+ CONSTRAINT [PK_dept_manager] PRIMARY KEY CLUSTERED 
+(
+	[dept_no] ASC,
+	[emp_no] ASC,
+	[from_date] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Employees]    Script Date: 08/10/19 7:44:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Employees](
+	[emp_no] [int] NOT NULL,
+	[birth_date] [date] NOT NULL,
+	[first_name] [nvarchar](50) NOT NULL,
+	[last_name] [nvarchar](50) NOT NULL,
+	[gender] [nvarchar](50) NOT NULL,
+	[hire_date] [date] NOT NULL,
+ CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED 
+(
+	[emp_no] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[salaries]    Script Date: 08/10/19 7:44:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[salaries](
+	[emp_no] [int] NOT NULL,
+	[salary] [int] NOT NULL,
+	[from_date] [date] NOT NULL,
+	[to_date] [date] NOT NULL,
+ CONSTRAINT [PK_salaries] PRIMARY KEY CLUSTERED 
+(
+	[emp_no] ASC,
+	[from_date] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[titles]    Script Date: 08/10/19 7:44:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[titles](
+	[emp_no] [int] NOT NULL,
+	[title] [nvarchar](50) NOT NULL,
+	[from_date] [date] NOT NULL,
+	[to_date] [date] NOT NULL,
+ CONSTRAINT [PK_titles] PRIMARY KEY CLUSTERED 
+(
+	[emp_no] ASC,
+	[title] ASC,
+	[from_date] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[dept_emp]  WITH CHECK ADD  CONSTRAINT [FK_dept_emp_departments] FOREIGN KEY([dept_no])
+REFERENCES [dbo].[departments] ([dept_no])
+GO
+ALTER TABLE [dbo].[dept_emp] CHECK CONSTRAINT [FK_dept_emp_departments]
+GO
+ALTER TABLE [dbo].[dept_emp]  WITH CHECK ADD  CONSTRAINT [FK_dept_emp_Employees] FOREIGN KEY([emp_no])
+REFERENCES [dbo].[Employees] ([emp_no])
+GO
+ALTER TABLE [dbo].[dept_emp] CHECK CONSTRAINT [FK_dept_emp_Employees]
+GO
+ALTER TABLE [dbo].[dept_manager]  WITH CHECK ADD  CONSTRAINT [FK_dept_manager_departments] FOREIGN KEY([dept_no])
+REFERENCES [dbo].[departments] ([dept_no])
+GO
+ALTER TABLE [dbo].[dept_manager] CHECK CONSTRAINT [FK_dept_manager_departments]
+GO
+ALTER TABLE [dbo].[dept_manager]  WITH CHECK ADD  CONSTRAINT [FK_dept_manager_Employees] FOREIGN KEY([emp_no])
+REFERENCES [dbo].[Employees] ([emp_no])
+GO
+ALTER TABLE [dbo].[dept_manager] CHECK CONSTRAINT [FK_dept_manager_Employees]
+GO
+ALTER TABLE [dbo].[salaries]  WITH CHECK ADD  CONSTRAINT [FK_salaries_Employees] FOREIGN KEY([emp_no])
+REFERENCES [dbo].[Employees] ([emp_no])
+GO
+ALTER TABLE [dbo].[salaries] CHECK CONSTRAINT [FK_salaries_Employees]
+GO
+ALTER TABLE [dbo].[titles]  WITH CHECK ADD  CONSTRAINT [FK_titles_Employees] FOREIGN KEY([emp_no])
+REFERENCES [dbo].[Employees] ([emp_no])
+GO
+ALTER TABLE [dbo].[titles] CHECK CONSTRAINT [FK_titles_Employees]
+GO
+
+
+
+
+##Query 1
+select TOP 5 e.emp_no, e.gender,e.last_name, e.first_name, s.salary
+from employees as e 
+INNER JOIN Salaries as s
+on e.emp_no = s.emp_no
+order by s.salary desc
+
+## Query 2
+select TOP 5 e.emp_no, e.gender,e.last_name, e.first_name
+from employees as e
+Where Year(e.hire_date )= 1986
+order by e.last_name, e.first_name desc
+
+## Query 3
+USE [Rice_Class_Csv]
+GO
+select d.dept_no,dp.dept_name,d.from_date,d.to_date,s.salary,e.last_name,e.first_name,e.hire_date
+from dept_manager as d
+inner join
+salaries as s on d.emp_no= s.emp_no
+inner join
+employees as e  on e.emp_no = d.emp_no
+inner join
+departments as dp on dp.dept_no=d.dept_no
+Where Year(d.to_date )= 9999
+order by d.dept_no
+## Query 4
+SELECT TOP 10 de.emp_no, de.dept_no,d.dept_name,e.last_name,e.first_name
+From dept_emp as de
+inner join 
+employees as e on de.emp_no=e.emp_no
+inner join 
+departments as d on de.dept_no= d.dept_no
+where year(de.to_date)= 9999
+order by de.emp_no desc
+## Query 5
+Select TOP 20 e.first_name, e.last_name, e.emp_no from
+employees as e
+where e.first_name='Hercules'
+and e.last_name like 'B%'
+order by e.last_name asc
+## Query 6
+select TOP 20 de.emp_no,e.last_name,e.first_name,d.dept_name
+from dept_emp as de
+inner join
+departments as d on d.dept_no=de.dept_no
+inner join
+employees as e on de.emp_no = e.emp_no
+where d.dept_name='Sales' and year(de.to_date)=9999
+## Query 7
+select TOP 20 de.emp_no,e.last_name,e.first_name,d.dept_name
+from dept_emp as de
+inner join
+departments as d on d.dept_no=de.dept_no
+inner join
+employees as e on de.emp_no = e.emp_no
+where (d.dept_name='Sales' or d.dept_name='Development') and year(de.to_date)=9999
+order by e.last_name asc
+
+## Query 8
+Select distinct top 20 e.last_name,l.countoflastname
+	from Employees as e
+		inner join(select last_name,count(last_name) as countoflastname
+			from employees group by last_name) as l on e.last_name = l.last_name
+			order by countoflastname desc
+## Query 8.b
+Use Rice_Class_Csv
+Go
+SELECT e.last_name, COUNT(*)
+from employees as e
+Group by e.last_name
+ORDER BY e.last_name
