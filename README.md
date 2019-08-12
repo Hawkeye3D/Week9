@@ -7,7 +7,7 @@
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 
@@ -184,7 +184,7 @@ Probably the trickiest part of this is to recognize that the primary keys for de
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 ## Query 1
@@ -216,7 +216,7 @@ order by s.salary desc
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 
@@ -249,7 +249,7 @@ order by e.last_name, e.first_name desc
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 ## Query 3
@@ -292,7 +292,7 @@ order by d.dept_no
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 ## Query 4
@@ -332,7 +332,7 @@ order by de.emp_no desc
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 ## Query 5
@@ -364,7 +364,7 @@ order by e.last_name asc
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 
@@ -401,7 +401,7 @@ where d.dept_name='Sales' and year(de.to_date)=9999
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 ## Query 7
@@ -436,7 +436,7 @@ order by e.last_name asc
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 ## Query 8
@@ -468,7 +468,7 @@ Select distinct top 20 e.last_name,l.countoflastname
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 ## Query 8.b
@@ -514,7 +514,7 @@ I have included this to show how much different queries that do the same thing c
 [Query 4](#Query-4)
 [Query 5](#Query-5)
 [Query 6](#Query-6)
-[Query 71](#Query-7)
+[Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
 
