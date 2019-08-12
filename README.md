@@ -505,8 +505,10 @@ I have included this to show how much different queries that do the same thing c
 | Ananiadou      | 160          |
 | Andreotta      | 165          |
 
+
+
 #### Click on Link to go to section
-[SQL Homework, Week7](#SQL-Homework,-Week7)
+[SQL Homework, Week7](#SQL-Homework--Week7)
 [Database Schema](#Database-Schema)
 [Query 1](#Query-1)
 [Query 2](#Query-2)
@@ -517,4 +519,3 @@ I have included this to show how much different queries that do the same thing c
 [Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
-
