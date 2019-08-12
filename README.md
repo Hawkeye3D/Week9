@@ -457,8 +457,7 @@ Select distinct top 20 e.last_name,l.countoflastname
 | Gelosh    | 223             |
 | Farris    | 222             |
 | Sudbeck   | 222             |
-
-```
+ 
 #### Click on Link to go to section
 [SQL Homework, Week7](#SQL-Homework,-Week7)
 [Database Schema](#Database-Schema)
@@ -476,7 +475,6 @@ SELECT  TOP 20 e.last_name, COUNT(*)  as countofnames
 from employees as e
 Group by e.last_name
 order by e.last_name
-```
 
 #### Q8b Output
 
