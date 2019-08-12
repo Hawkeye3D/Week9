@@ -446,7 +446,7 @@ Select distinct top 20 e.last_name,l.countoflastname
 		inner join(select last_name,count(last_name) as countoflastname
 			from employees group by last_name) as l on e.last_name = l.last_name
 			order by countoflastname desc
-			```
+```
 
 #### Q8 Output
 
@@ -470,11 +470,15 @@ Select distinct top 20 e.last_name,l.countoflastname
 [Query 7](#Query-7)
 [Query 8](#Query-8)
 [Query 8b](#Query-8b)
+
+
 ## Query 8.b
+```mssql
 SELECT  TOP 20 e.last_name, COUNT(*)  as countofnames
 from employees as e
 Group by e.last_name
 order by e.last_name
+```
 
 #### Q8b Output
 
@@ -502,3 +506,17 @@ I have included this to show how much different queries that do the same thing c
 | Anandan        | 190          |
 | Ananiadou      | 160          |
 | Andreotta      | 165          |
+
+
+#### Click on Link to go to section
+[SQL Homework, Week7](#SQL-Homework,-Week7)
+[Database Schema](#Database-Schema)
+[Query 1](#Query-1)
+[Query 2](#Query-2)
+[Query 3](#Query-3)
+[Query 4](#Query-4)
+[Query 5](#Query-5)
+[Query 6](#Query-6)
+[Query 7](#Query-7)
+[Query 8](#Query-8)
+[Query 8b](#Query-8b)
